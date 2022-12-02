@@ -1,0 +1,60 @@
+body{
+  background-color: blanchedalmond;
+}
+
+h1{
+  text-align: center;
+}
+p{
+  font-size: 20px;
+  text-decoration: none;
+}
+
+button{
+  font-size: 20px 10px;
+  color:black;
+  background: white;
+  border-radius: 30px;
+  
+}
+
+button:hover{
+  color: beige;
+  background: black;
+}
+
+#form{
+  width: 500px;
+  margin: 10vh auto 0 auto;
+  padding: 20px;
+  background-color: #9e9bc0;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+#form h2{
+  text-align: center;   
+}
+
+.input-control{
+  display: flex;
+  flex-direction: column;
+}
+.input-control label{
+  font-size: 25px;
+
+}
+.input-control input{
+  border: 2px solid #da301a;
+  border-radius: 4px;
+  display: block;
+  font-size: 30px;
+  padding: 10px;
+  width: 85%;
+  margin: 5px;
+  text-align: center;
+}
+
+.input-control input:focus{
+  outline: 0;
+}
