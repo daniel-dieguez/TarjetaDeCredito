@@ -1,13 +1,36 @@
 
 var btnEmpezar = document.getElementById("btnempezar");
+var inputnumero = document.getElementById("num");
+var btnrestart = document.getElementById("restart");
 
-btnEmpezar.addEventListener("click",function (){
+
+inputnumero.addEventListener('keypress', (event) =>{
+  event.preventDefault();
+  let codigo = event.keyCode;
+  let valor = String.fromCharCode(codigo);
+  
+  console.log(valor);
+
+  let validacion = parseInt(valor);
+  console.log(validacion);
+  if(valor){
+    inputnumero.value +=  validacion;
+  }
+
+});
+
+
+btnEmpezar.addEventListener("click", function (){
   event.preventDefault();
   var Numeros = document.getElementById("num");
-  const islleno = true;
+  
 
-  if (Numeros.value.length > 8, Numeros.value.length < 8){
-    alert('La cantidad de numeros no es correcta')
+  if (Numeros.value.length > 12, Numeros.value.length < 12){
+    Swal.fire({
+      icon: 'warning',
+      title: 'REVISE',
+      text: 'Revise nuevamente, digitos mal escritos',
+    })
   }
   else{
     Swal.fire({
@@ -17,15 +40,11 @@ btnEmpezar.addEventListener("click",function (){
     })
   }
   
-
 });
 
 
-
-/*
-Swal.fire({
-      icon: 'success',
-      title: 'Numeros bien escritos',
-      text: 'Bien echor',
-    })
-     */
+btnrestart.addEventListener('click', function () {
+  document.querySelectorAll('#num').forEach((element) =>{
+    element.innerHTML='';
+  });
+});
