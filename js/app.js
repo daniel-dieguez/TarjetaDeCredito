@@ -6,8 +6,8 @@ var btnrestart = document.getElementById("restart");
 
 inputnumero.addEventListener('keypress', (event) =>{
   event.preventDefault();
-  let codigo = event.keyCode;
-  let valor = String.fromCharCode(codigo);
+  const codigo = event.keyCode;
+  const valor = String.fromCharCode(codigo);
   
   console.log(valor);
 
@@ -23,13 +23,27 @@ inputnumero.addEventListener('keypress', (event) =>{
 btnEmpezar.addEventListener("click", function (){
   event.preventDefault();
   var Numeros = document.getElementById("num");
-  
 
-  if (Numeros.value.length > 12, Numeros.value.length < 12){
+  if (Numeros.value.length == 0){
     Swal.fire({
       icon: 'warning',
       title: 'REVISE',
-      text: 'Revise nuevamente, digitos mal escritos',
+      text: 'Tiene que poner numeros',
+    })
+
+  }
+  else if (Numeros.value.length < 12){
+    Swal.fire({
+      icon: 'warning',
+      title: 'REVISE',
+      text: 'Faltan numeros',
+    })
+  }
+  else if (Numeros.value.length > 12){
+    Swal.fire({
+      icon: 'warning',
+      title: 'REVISE',
+      text: 'Revise, Son muchos numeros',
     })
   }
   else{
