@@ -22,6 +22,7 @@ inputnumero.addEventListener('keypress', (event) =>{
 
 btnEmpezar.addEventListener("click", function (){
   event.preventDefault();
+  form.reset();
   var Numeros = document.getElementById("num");
 
   if (Numeros.value.length == 0){
