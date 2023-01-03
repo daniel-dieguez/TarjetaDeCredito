@@ -23,7 +23,13 @@ inputnumero.addEventListener('keypress', (event) =>{
 btnEmpezar.addEventListener("click", function (){
   event.preventDefault();
   form.reset();
+
   var Numeros = document.getElementById("num");
+  const crearNum = document.createElement('cuenta');
+  crearNum.innerHTML = Numeros.value;
+
+  const colocar = document.getElementById('numeros');
+  colocar.appendChild(crearNum);
 
   if (Numeros.value.length == 0){
     Swal.fire({
