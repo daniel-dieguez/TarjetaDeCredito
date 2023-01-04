@@ -1,71 +1,58 @@
-
 var btnEmpezar = document.getElementById("btnempezar");
-var inputnumero = document.getElementById("num");
-var btnrestart = document.getElementById("restart");
+const inputnumero = document.getElementById("num");
 
 
-inputnumero.addEventListener('keypress', (event) =>{
-  event.preventDefault();
-  const codigo = event.keyCode;
-  const valor = String.fromCharCode(codigo);
-  
-  console.log(valor);
+inputnumero.addEventListener("input", (e) => {
+  const error = document.getElementById("error");
+  const inputValue = e.target.value;
 
-  let validacion = parseInt(valor);
-  console.log(validacion);
-  if(valor){
-    inputnumero.value +=  validacion;
+  let objetos = /[A-z]/g;
+  if (objetos.test(inputnumero.value)) {
+    error.innerHTML = "Error, se encuentra una letra ";
+  } else {
+    inputnumero.value = inputValue
+      .replace(/\s/g, "")
+      .replace(/([0-9]{4})/g, `$1 `)
+      .trim();
+    error.innerHTML = "";
   }
-
 });
 
+const colocar = document.getElementById("numeros");
+inputnumero.addEventListener("keyup", () => {
+  colocar.innerHTML = inputnumero.value;
+});
 
-btnEmpezar.addEventListener("click", function (){
+btnEmpezar.addEventListener("click", mostrar);
+function mostrar() {
   event.preventDefault();
+  
+  if (inputnumero.value.length == 0) {
+    Swal.fire({
+      icon: "warning",
+      title: "REVISE",
+      text: "Tiene que poner numeros",
+    });
+  } else if (inputnumero.value.length < 19) {
+    Swal.fire({
+      icon: "warning",
+      title: "REVISE",
+      text: "Faltan numeros",
+    });
+  } else if (inputnumero.value.length > 19) {
+    Swal.fire({
+      icon: "warning",
+      title: "REVISE",
+      text: "Revise, Son muchos numeros",
+    });
+  } else {
+    Swal.fire({
+      icon: "success",
+      title: "Numeros bien escritos",
+      text: "Bien echor",
+    });
+
+  }
   form.reset();
+}
 
-  var Numeros = document.getElementById("num");
-  const crearNum = document.createElement('cuenta');
-  crearNum.innerHTML = Numeros.value;
-
-  const colocar = document.getElementById('numeros');
-  colocar.appendChild(crearNum);
-
-  if (Numeros.value.length == 0){
-    Swal.fire({
-      icon: 'warning',
-      title: 'REVISE',
-      text: 'Tiene que poner numeros',
-    })
-
-  }
-  else if (Numeros.value.length < 12){
-    Swal.fire({
-      icon: 'warning',
-      title: 'REVISE',
-      text: 'Faltan numeros',
-    })
-  }
-  else if (Numeros.value.length > 12){
-    Swal.fire({
-      icon: 'warning',
-      title: 'REVISE',
-      text: 'Revise, Son muchos numeros',
-    })
-  }
-  else{
-    Swal.fire({
-      icon: 'success',
-      title: 'Numeros bien escritos',
-      text: 'Bien echor',
-    })
-  }
-  
-});
-
-
-btnrestart.addEventListener('click', function () {
-  document.querySelectorAll('#num').forEach((element) =>{
-    element.innerHTML='';
-  });
-});

@@ -1,14 +1,23 @@
 body{
-  background-color: blanchedalmond;
+  background: linear-gradient(to top, #e9d0e6 0%, #bce6ae 100%);
 }
 
 h1{
   text-align: center;
+  font-family:'Times New Roman', Times, serif;
 }
+
 p{
-  font-size: 20px;
+  font-size: 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
   text-decoration: none;
+  text-align: left;
+}
+
+#numeros{
   text-align: center;
+  float: center;
 }
 
 button{
@@ -27,42 +36,54 @@ button:hover{
   background: black;
 }
 
-#form{
+#formulario{
   width: 500px;
   margin: 10vh auto 0 auto;
-  padding: 20px;
-  background-color: #9e9bc0;
+  padding: 50px;
+  background-image: linear-gradient(to top, #a71994 0%, #ffb199 100%);
   border-radius: 20px;
   font-size: 20px;
 }
 
-#form h2{
-  text-align: center;   
+#formulario h2{
+  text-align: left;
+  padding: 5px;   
 }
 
 #verificadores{
   display: flex;
   flex-direction: column;
 }
-#verificadores label{
-  font-size: 25px;
-  text-align: center;
+label{
+  font-size: 20px;
+  text-align: left;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
 }
-#verificadores input{
+ #num {
   border: 2px solid #da301a;
   border-radius: 4px;
   display: block;
   font-size: 30px;
   padding: 10px;
-  width: 85%;
+  width: 30%;
   margin: 5px;
-  float: center;
+  float: left;
   text-align: center;
 }
-
-#verificadores input:focus{
+ input:focus{
   outline: 0;
 }
 
+#error{
+  color: #da301a;
+  font-size: 15px;
+}
+
+#numeros{
+  font-size: 40px;
+  font-family:'Courier New', Courier, monospace;
+  color: aliceblue;
+
+}
 

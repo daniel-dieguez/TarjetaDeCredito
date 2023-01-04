@@ -11,28 +11,25 @@
     <div id="cuerpo">
       <h1>Tarjeta de credito</h1>
       <hr />
-      <p>
-        Este trabajo consiste en
-        <span>
-          realizar una targeta de credito donde nosotros tengamos que poner solo
-          los numeros y el programa ponga solo los guiones
-        </span>
-      </p>
+      <p>Realizar una tarjeta de credito de 16 digitos donde el cliente pueda escribir y
+         validar los datos numericos, ademas que se muestre el cambio de digitos al momento de agregarlos y/o borrarlos.</p>
       <div id="container">
-        <form action="" id="form">
+        
+        <div id="formulario">
           <div class="input-control">
             <h2 id="tarjeta">Tarjeta banco G&T</h2>
-            <div id="numeros">
-              <p id="cuenta"></p>
-            </div>
+            <div id="numeros"></div> 
           </div>
-        </form>
-        <div id="verificadores">
-          <label for=""> Coloca los numeros de la tarjeta de credito</label>
-          <input id="num" type="text" placeholder="xxxx-xxxx-xxxx" required />
         </div>
+        <div id="verificadores">
+          <form action="" id="form">
+          <label for="texto">Coloca los numeros de la tarjeta de credito</label>
+          <div id="error"></div>
+          <input id="num" type="text" placeholder="xxxx-xxxx-xxxx-xxxx" required />
+        </form>
+        </div>
+     
         <button id="btnempezar">verificar</button>
-          <button id="restart">Reiniciar</button>
       </div>
     </div>
 
