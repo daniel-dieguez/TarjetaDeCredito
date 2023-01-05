@@ -1,10 +1,13 @@
 body{
-  background: linear-gradient(to top, #e9d0e6 0%, #bce6ae 100%);
+background: linear-gradient(123deg, #461B93 0%, #461B93 40%, #6A3CBC calc(40% + 1px), #6A3CBC 60%, #8253D7 calc(60% + 1px), #8253D7 70%, #F78F1E calc(70% + 1px), #F78F1E 100%);
+background-repeat: no-repeat;
+background-size: cover;
+min-height: 100vh;
 }
-
 h1{
   text-align: center;
   font-family:'Times New Roman', Times, serif;
+  color: antiquewhite;
 }
 
 p{
@@ -13,6 +16,7 @@ p{
   font-style: italic;
   text-decoration: none;
   text-align: left;
+  color: antiquewhite;
 }
 
 #numeros{
@@ -58,6 +62,8 @@ label{
   font-size: 20px;
   text-align: left;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: aliceblue;
+  margin: 5px;
 
 }
  #num {
@@ -82,8 +88,12 @@ label{
 
 #numeros{
   font-size: 40px;
-  font-family:'Courier New', Courier, monospace;
+  font-family:serif;
   color: aliceblue;
+  
 
 }
 
+#container{
+  
+}
